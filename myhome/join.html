@@ -15,6 +15,10 @@
             color: rgb(18, 18, 18);
             font-family: 굴림;
             padding: 20px;
+            margin: 150px auto;
+        }
+        li{
+            list-style: none;
         }
         form{
             background: #CDF0EA;
@@ -30,7 +34,7 @@
             margin-bottom: 0;
         }
         li label{
-            display: block;
+            display: inline-block;
             padding-bottom: 2px;
         }
         form ol li{
@@ -89,4 +93,13 @@
         </fieldset>
     </form>
 </body>
+<script>
+    const join = document.getElementById("join");
+    const nick = document.getElementById("nick");
+    join.addEventListener("click", () => {
+        alert(nick.value+"님 환영합니다.");
+        location.href = "index.html";
+    });
+</script>
+
 </html>
