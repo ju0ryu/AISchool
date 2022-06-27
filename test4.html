@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html5 Blog</title>
+    <style>
+        body {
+            width: 960px;
+            margin: 15px auto;
+        }
+        li{
+            margin: left;
+            list-style: none;
+        }
+        h1{
+            text-align: center;
+        }
+        #page_header li{
+            float: left;
+            margin-right: 3%;
+        }
+        h1{
+            text-align: center;
+            text-shadow: 5px 5px 5px rgb(145, 143, 143);
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            font-weight: bold;
+            color: blueviolet;
+        }
+        #posts{
+            width: 700px;
+            float: left;
+            text-align: left;
+        }
+        #sidebar {
+            width: 260px;
+            float: right;
+            margin: left;
+        }
+        #page_footer{
+            clear: both;
+            text-align: center;
+        }
+        #page_footer li{
+            display: inline-block;
+            margin-right: 3%;
+        }
+        /* .clear{
+            clear: both;
+        }
+         */
+    </style>
+</head>
+
+<body>
+    <header id="page_header">
+        <h1>HTML5</h1>
+        <nav>
+            <ul>
+                <li><a href="#">HTML5 API</a></li>
+                <li><a href="#">CSS3</a></li>
+                <li><a href="#">jQueryMobile</a></li>
+                <li><a href="#">PhoneGap</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <section id="posts">
+        <article class="post">
+            <header>
+                <h2>HTML5 소개</h2>
+            </header>
+            <p>
+                html5가 인터넷 업계에서 알려지게 된 계기는 바로 구글의 웹 개발자 콘퍼런스인
+                스티브 잡스가 애플 아이폰에 플래시 탑재를 거부하면서 대응 기술로 홍보하기 시작
+            </p>
+            <p>
+                수많은 데모들에서 기존의 RIA 기술을 능가할 만한 것을
+                보여줌으로써 마치 구글과 애플이 자사의 이익을 위해 플러그인 기반
+                개방형 웹 표준으로서 웹 개발자의 생산성과 가치를 높이기 위한 다양한 기술을 담았다
+            </p>
+        </article>
+    </section>
+    <aside id="sidebar">
+        <nav>
+            <h3>다른 글들</h3>
+            <ul>
+                <li><a href="#">Sencha Touch</a></li>
+                <li><a href="#">Java</a></li>
+                <li><a href="#">Jsp</a></li>
+                <li><a href="#">Spring</a></li>
+                <li><a href="#">Android</a></li>
+                <li><a href="#">IOS</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="clear"></div>
+    <footer id="page_footer">
+        <p>&copy; 2022 광주인공지능사관학교</p>
+        <nav>
+            <ul>
+                <li><a href="#">홈페이지</a></li>
+                <li><a href="#">회사 소개</a></li>
+                <li><a href="#">서비스 항목</a></li>
+                <li><a href="#">개인정보 보호정책</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
