@@ -4,100 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="join.css" type="text/css">
     <title>Document</title>
-    <style>
-        body, form, fieldset, legend, ol, li{
-            margin: 0;
-            padding: 0;
-        }
-        body{
-            background: white;
-            color: rgb(18, 18, 18);
-            font-family: 굴림;
-            padding: 20px;
-            margin: 150px auto;
-        }
-        li{
-            list-style: none;
-        }
-        form{
-            background: #CDF0EA;
-            border-radius: 5px;
-            padding: 20px;
-            width: 500px;
-        }
-        form fieldset{
-            border: none;
-            margin-bottom: 10px;
-        }
-        form fieldset:last-of-type{
-            margin-bottom: 0;
-        }
-        li label{
-            display: inline-block;
-            padding-bottom: 2px;
-        }
-        form ol li{
-            background: rgba(255,255,255,.3);
-	        border-color: rgba(255,255,255,.6);
-	        border-style: solid;
-	        border-width: 2px;
-            border-radius: 5px;
-            margin-bottom: 2px;
-        }
-
-
-    </style>
 </head>
 <body>
+    <div id="box1">
     <form action="#" method="post">
-        <fieldset> 
-            <legend>회원가입</legend>
+            <h3>회원가입</h3>
             <ol>
                 <li>
                     <label for="id">아이디</label>
-                    <input type="text" name="" id="id" placeholder="영문,숫자 사용, 10자리미만" required autofocus>
+                    <input type="text" class="account" name="" id="id" placeholder="영문,숫자 사용, 10자리미만" required autofocus>
                 </li>
                 <li> 
                     <label for="pw">비밀번호</label>
-                    <input type="password" name="" id="pw" placeholder="영문,숫자 사용 6~10자리" required>
+                    <input type="password" class="account" name="" id="pw" placeholder="영문,숫자 사용 6~10자리" required>
                 </li>
                 <li>
                     <label for="pwCheck">비밀번호확인</label>
-                    <input type="password" name="pwCheck" id="pwC">
+                    <input type="password" class="account" name="pwCheck" id="pwC">
                 </li>
                 <li>
                     <label for="nick">닉네임</label>
-                    <input type="text" name="nick" id="nick">
+                    <input type="text" class="account" name="nick" id="nick">
                 </li>
                 <li>
                     <label for="name">이름</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" class="account" name="name" id="name">
                 </li>
                 <li>
                     <label for="address">주소</label>
-                    <input type="text" name="" id="address">
+                    <input type="text" class="account" name="" id="address">
                 </li>               
                 <li>
                     <label for="email">이메일</label> 
-                    <input type="email" name="email" id="email" placeholder="0802ryu@gmail.com">
+                    <input type="email" class="account" name="email" id="email" placeholder="example@gmail.com">
                 </li>
                 <li>
                     <label for="tel">핸드폰</label>
-                    <input type="tel" name="tel" id="tel">
+                    <input type="tel" class="account" name="tel" id="tel">
                 </li>
+                <li>
+                    <label for="dof">품종</label>
+                    <input list="dog" name="dog" >
+                        <datalist id="dog">
+                            <option value="비숑">
+                            <option value="말티즈">
+                            <option value="포메라니안">
+                            <option value="푸들">
+                            <option value="시바견">
+                            <option value="치와와">
+                            <option value="기타">
+                        </datalist>
+                </li>
+                <li>
+                    <input type="submit" value="가입하기" name="submit" id="join">
+                </li>                
             </ol>
-        </fieldset>
-        <fieldset>
-            <input type="submit" value="회원가입" name="submit" id="join">
-        </fieldset>
     </form>
+    </div>
 </body>
 <script>
     const join = document.getElementById("join");
     const nick = document.getElementById("nick");
     join.addEventListener("click", () => {
-        alert(nick.value+"님 환영합니다.");
+        alert(nick.value+"님 가입이 완료되었습니다.🎉");
         location.href = "index.html";
     });
 </script>

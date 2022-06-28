@@ -5,33 +5,124 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        *{ margin: 0; padding: 0; font-size: 12px; font-family: 'Courier New', Courier, monospace;}
-        header{
-            display: block;
-            height: 500px;
-            background: skyblue;
-            position: relative;
-        }
-        content{
-            display: block;
-            height: 300px;
-            background:lavender;
-            position: absolute;
-        }
-        footer{
-            display: block;
-            height: 100%;
-            background: yellow;
-            position: absolute;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="index.css" type="text/css" /> 
 </head>
 <body>
-    <header></header>
-    <content>
-        <div></div>
-    </content>
-    <footer></footer>
+    <header id="main_header">
+        <div id="title">
+            <h1>Mi Puppi</h1>
+            <h2>내 강아지 알림장</h2>
+        </div>
+        <nav id="main_gnb">
+            <ul>
+                <li><a href="#">내강아지 정보</a></li>
+                <li><a href="#">사료/간식</a></li>
+                <li><a href="#">장난감</a></li>
+            </ul>
+        </nav>
+        <nav id="main_lnb">
+            <ul>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="login.html">내정보</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="content">
+        <section id="main_section">
+            <article class="main_article">
+                <h1>달력</h1>
+            </article>
+            <article class="main_article">
+                <h1>.</h1>
+                <p>.</p>
+                </article>
+        </section>
+        <aside id="main_aside">
+            <input id="first" type="radio" name="tab" checked="checked" />
+            <input id="second" type="radio" name="tab" />
+            <section class="buttons">
+                <label for="first">First</label>
+                <label for="second">Second</label>
+            </section>
+            <div class="tab_item">
+                <ul>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" />
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Canvas</strong><p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" />
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Audio</strong><p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" />
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Video</strong><p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" />
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Semantic Web</strong><p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="tab_item">
+                <ul>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" />
+                        </div>
+                        <div class="description">
+                            <strong>CSS3 Transition</strong><p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" />
+                        </div>
+                        <div class="description">
+                            <strong>CSS3 Animation</strong><p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" />
+                        </div>
+                        <div class="description">
+                            <strong>CSS3 Border</strong><p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                    <li class="item"><a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" />
+                        </div>
+                        <div class="description">
+                            <strong>CSS3 Box</strong><p>2012-03-15</p>
+                        </div>
+                    </a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <footer id="main_footer">
+        <p>유주영</p>
+        <p>광주광역시 광산구 우산로</p>
+        <p>010-0000-0000</p>
+    </footer>
 </body>
 </html>
