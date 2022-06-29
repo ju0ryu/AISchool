@@ -5,9 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="test.js"></script>
+    <!-- <script src="test1.js"></script> -->
 </head>
 <body>
-    test
+    <script>
+        var num1 = prompt('학번을 입력하세요');
+        var name = prompt('이름을 입력하세요');
+        var eng = parseInt(prompt('영어 점수를 입력하세요'));
+        var math = parseInt(prompt('수학 점수를 입력하세요'));
+        var kor = parseInt(prompt('국어 점수를 입력하세요'));
+        var sum =eng+math+kor;
+        var num =sum/3;
+        var kind;
+    
+        if(num >=90){
+            kind = '수';
+        }else if(num >= 80){
+            kind = '우';
+        }else if(num >= 70){
+            kind = '미';
+        }else if(num >= 60){
+            kind = '양';
+        }else{
+            kind = '가';
+        }
+        document.write(`
+        <table border="1" text-align="center">
+            <tr>
+                <td>학번</td>
+                <td>이름</td>
+                <td>국어</td>
+                <td>영어</td>
+                <td>수학</td>
+                <td>총점</td>
+                <td>평균</td>
+                <td>등급</td>                
+            </tr>
+            <tr>
+                <td> ${num1}</td>
+                <td> ${name}</td>
+                <td> ${kor}</td>
+                <td> ${eng}</td>
+                <td> ${math}</td>
+                <td> ${sum}</td>
+                <td> ${num.toFixed(2)}</td>
+                <td> ${kind}</td>
+            </tr>
+        </table>`
+        );
+</script>
 </body>
 </html>
