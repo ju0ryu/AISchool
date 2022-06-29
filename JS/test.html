@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <script src="test1.js"></script> -->
+    <script src="test1.js"></script>
 </head>
 <body>
-    <script>
+    <!-- <script>
         var num1 = prompt('학번을 입력하세요');
         var name = prompt('이름을 입력하세요');
         var eng = parseInt(prompt('영어 점수를 입력하세요'));
@@ -18,17 +18,33 @@
         var num =sum/3;
         var kind;
     
-        if(num >=90){
-            kind = '수';
-        }else if(num >= 80){
-            kind = '우';
-        }else if(num >= 70){
-            kind = '미';
-        }else if(num >= 60){
-            kind = '양';
-        }else{
-            kind = '가';
+        switch(parseInt(num/10)){
+            case 9: 
+                kind = '수'; 
+                break;
+            case 8: 
+                kind = '우'; 
+                break;  
+            case 7: 
+                kind = '미'; 
+                break;
+            case 6: 
+                kind = '양'; 
+                break;
+            default: 
+                kind = '가';
         }
+        // if(num >=90){
+        //     kind = '수';
+        // }else if(num >= 80){
+        //     kind = '우';
+        // }else if(num >= 70){
+        //     kind = '미';
+        // }else if(num >= 60){
+        //     kind = '양';
+        // }else{
+        //     kind = '가';
+        // }
         document.write(`
         <table border="1" text-align="center">
             <tr>
@@ -53,6 +69,34 @@
             </tr>
         </table>`
         );
-</script>
+</script> -->
+<!-- <script>
+    num1=parseInt(prompt('첫번째 수'));
+    num2=parseInt(prompt('두번째 수'));
+    var max;
+    var min;
+    var mul;
+    if(num1>num2){
+        max=num1;
+        min=num2;
+    }else{
+        min=num1;
+        max=num2;
+    }
+document.write('<table border="1"> <tr>');
+    for(var i = min;i<=max;i++){
+        document.write(`<td>${i}단</td>`);
+    }
+document.write('</tr>');
+    for(var j=1;j<=9;j++){
+        document.write('<tr>');
+        for(var k=min;k<=max;k++){
+            mul=k*j;
+            document.write(`<td>${k}*${j}=${mul}</td>`)
+        }
+        document.write('</tr>');
+    }
+document.write('</table>');
+</script> -->
 </body>
 </html>
