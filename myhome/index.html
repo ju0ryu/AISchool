@@ -1,160 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="index.css" type="text/css" /> 
+    <title>Mi Puppi</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css" type="text/css">
 </head>
+
 <body>
-    <header id="main_header">
-        <div id="title">
-            <a href="index.html"><img src="dog_bone.svg" id="dogLogo"></a>
-            <h1>Mi Puppi</h1>
-            <h2>내 강아지 알림장</h2>
+    <div id="header">
+        <div class="topnav">
+            <a href="login.html">로그인</a>
+            <a href="join.html">회원가입</a>
+            <a href="#calendar">사상충달력</a>
+            <a href="#snack">간식</a>
+            <a href="#toy">장난감</a>
+            <a href="#info">내강아지</a>
         </div>
-        <nav id="main_gnb">
-            <ul>
-                <li><a href="#">내강아지 정보</a></li>
-                <li><a href="https://prunusofficial.com/ceramideandomega3">사료/간식</a></li>
-                <li><a href="#">장난감</a></li>
-            </ul>
-        </nav>
-        <nav id="main_lnb">
-            <ul>
-                <li><a href="login.html">로그인</a></li>
-                <li><a href="join.html">회원가입</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div id="content">
-        <section id="main_section">
-            <article class="main_article">
-                <h1>사상충 확인 달력</h1>
-                <div class="month">      
-                    <ul>
-                    <li>
-                        6월<br>
-                        <span style="font-size:18px">2022</span>
-                    </li>
-                    </ul>
-                </div>
-                
-                <ul class="weekdays">
-                    <li>Mo</li>
-                    <li>Tu</li>
-                    <li>We</li>
-                    <li>Th</li>
-                    <li>Fr</li>
-                    <li>Sa</li>
-                    <li>Su</li>
-                </ul>
-                
-                <ul class="days">  
-                    <li></li>
-                    <li></li>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                    <li>7</li>
-                    <li>8</li>
-                    <li>9</li>
-                    <li>10</li>
-                    <li>11</li>
-                    <li>12</li>
-                    <li>13</li>
-                    <li>14</li>
-                    <li>15</li>
-                    <li>16</li>
-                    <li>17</li>
-                    <li>18</li>
-                    <li>19</li>
-                    <li>20</li>
-                    <li>21</li>
-                    <li>22</li>
-                    <li>23</li>
-                    <li>24</li>
-                    <li>25</li>
-                    <li>26</li>
-                    <li>27</li>
-                    <li>28</li>
-                    <li>29</li>
-                    <li>30</li>
-                </ul>
-            </article>
-            <article class="main_article">
-                <h1>.</h1>
-                <p>.</p>
-                </article>
-        </section>
-        <aside id="main_aside">
-            <input id="first" type="radio" name="tab" checked="checked" />
-            <input id="second" type="radio" name="tab" />
-            <section class="buttons">
-                <label for="first">추천간식</label>
-                <label for="second">추천장난감</label>
-            </section>
-            <div class="tab_item">
-                <ul>
-                    <li class="item"><a href="https://bbosiraegi.kr/product/100%EC%9B%90-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%BD%80%EC%8B%9C%EB%9E%98%EA%B8%B0-%ED%94%8C%EB%9D%BC%EA%B7%B8%EC%B8%84-%EA%B0%95%EC%95%84%EC%A7%80-%EC%B9%98%EC%84%9D%EC%A0%9C%EA%B1%B0-%EA%B0%9C%EA%BB%8C-%EA%B7%B8%EB%A6%B0-%EA%B4%80%EC%A0%88-%EA%B1%B4%EA%B0%95-6%EA%B0%9C%EC%9E%85/92/">
-                        <div class="recommand">
-                        </div>
-                        <div class="description">
-                            <strong>플라그츄</strong><p>건강기능 양치용껌</p>
-                        </div>
-                    </a></li>
-                    <li class="item"><a href="https://prunusofficial.com/fucoidan20">
-                        <div class="recommand">
-                        </div>
-                        <div class="description">
-                            <strong>후코이단</strong><p>저칼로리 훈련용간식</p>
-                        </div>
-                    </a></li>
-                    <li class="item"><a href="https://prunusofficial.com/ceramideandomega3">
-                        <div class="recommand">
-                        </div>
-                        <div class="description">
-                            <strong>오메가3</strong><p>필수영양소 건강식품</p>
-                        </div>
-                    </a></li>
-                </ul>
-            </div>
-            <div class="tab_item">
-                <ul>
-                    <li class="item"><a href="#">
-                        <div class="recommand">
-                        </div>
-                        <div class="description">
-                            <strong>노즈워크</strong><p>지능훈련과 놀이를 함께</p>
-                        </div>
-                    </a></li>
-                    <li class="item"><a href="#">
-                        <div class="recommand">
-                        </div>
-                        <div class="description">
-                            <strong>개껌</strong><p>치아발달과 훈련</p>
-                        </div>
-                    </a></li>
-                    <li class="item"><a href="#">
-                        <div class="recommand">
-                        </div>
-                        <div class="description">
-                            <strong>방석</strong><p>애착쉼터</p>
-                        </div>
-                    </a></li>
-                </ul>
-            </div>
-        </aside>
+        <a href="index.html" class="logo"><img src="dog_bone.svg" id="dogLogo"></a>
+        <h2>Mi Puppi</h2>
+        <h4>나의 반려견 알림장</h4>
+        <div id="fixnav">
+            <a href="login.html">로그인</a>
+            <a href="join.html">회원가입</a>
+            <a href="#calendar">사상충달력</a>
+            <a href="#snack">간식</a>
+            <a href="#toy">장난감</a>
+            <a href="#info">내강아지</a>
+        </div>
     </div>
-    <footer id="main_footer">
-        <p>유주영</p>
-        <p>광주광역시 광산구 우산로</p>
-        <p>010-0000-0000</p>
-    </footer>
+    <div id="calendar">
+        <h2 class="title">Caledar</h2>
+        <div class="month">
+            <ul>
+                <li>
+                    6월<br>
+                    <span style="font-size:18px">2022</span>
+                </li>
+            </ul>
+        </div>
+        <ul class="weekdays">
+            <li>Mo</li><li>Tu</li><li>We</li><li>Th</li>
+            <li>Fr</li><li>Sa</li><li>Su</li>
+        </ul>
+        <ul class="days">
+            <li></li><li></li><li>1</li><li>2</li><li>3</li><li>4</li>
+            <li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li>
+            <li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li>
+            <li>17</li><li>18</li><li>19</li><li>20</li><li>21</li><li>22</li>
+            <li>23</li><li>24</li><li>25</li><li>26</li><li>27</li>
+            <li>28</li><li>29</li><li>30</li>
+        </ul>
+    </div>
+    <div id="snack">
+        <h2 class="title">Snack</h2>
+        <div class="snackBox">
+            <img src="https://sitem.ssgcdn.com/56/69/37/item/1000049376956_i1_1200.jpg/">
+            <strong>플라그츄</strong>
+            <p>플라그가 쌓이지 않도록 도와주는 스피루리나가 함유된 치아관리 간식.물리적 자극을 통해서도 치석,치태가 쌓이는 속도를 늦춰 치아 건강에 도움을준다.</p>
+        </div>
+        <div class="snackBox">
+            <img src="https://cdn.imweb.me/thumbnail/20220224/3b3f6615e1fd1.jpg">
+            <strong>후코이단</strong>
+            <p>반려견 대소변을 흡착하여 냄새를 줄이고 연변저하에 도움을준다. 관절건강과 체중조절에 좋은 간식. 급여량은 10~20개 내외가 적당하다.</p>
+        </div>
+        <div class="snackBox">
+            <img src="data:image/jpeg;base64,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">
+            <strong>오메가3</strong>
+            <p>피부건강을 위한 기능성 간식이다. 균형잡힌 오메가3와 오메가6가 함유되어있어 더욱 건강에 좋다. 급여량은 2~3개가 적당하다.</p>
+        </div>
+    </div>
+    <div id="toy">
+        <h2 class="title">Toy</h2>
+        <div class="toyBox">
+            <img src="http://m.ddnn.co.kr/web/product/big/20200304/58debc862d3c95034ab39427f1c0c899.jpg">
+            <strong>노즈워크</strong>
+            <p>시력보다 후각이 발달한 강아지는 노즈워크를 통해 두뇌를 활성화 시키고 스트레스해소에도 도움을 준다. 또한 노화방지에도 좋다.</p>
+        </div>
+        <div class="toyBox">
+            <img src="http://image.auction.co.kr/itemimage/1c/5d/b3/1c5db30036.jpg">
+            <strong>터그놀이</strong>
+            <p>본능을 충족시켜주어 습성을 달래주고 스트레스를 풀어줄 수 있다. 특히 어린 강아지의 이갈이 시기에 더욱 좋은 놀이이다.</p>
+        </div>
+        <div class="toyBox">
+            <img src="https://cdn.ownerclan.com/FORyPirsb0X16okl~MgFvM9MT3BJhjykWoTt3LsWpJ4/marketize/auto/as/v1.jpg">
+            <strong>휴식쿠션</strong>
+            <p>강아지는 푹신한 곳을 좋아한다. 그리고 강아지만의 공간이 있어야 안정감을 느끼고 몸이 아프거나 스트레스 받을때 들어가 쉴곳이 필요하다.</p>
+        </div>
+    </div>
+    <div id="info">
+        <h2 class="title">Information</h2>
+        <div class="infoBox">
+            <img src="pomi.jpg">
+            <ul id="infoList">
+                <label for="name">이름:</label>
+                <li id="name">포미</li>
+                <div class="clear"></div>
+                <label for="age">나이:</label>
+                <li id="age">6살</li>
+                <div class="clear"></div>
+                <label for="weight">몸무게:</label>
+                <li id="weight">4.5kg</li>
+                <div class="clear"></div>
+                <label for="species">견종:</label>
+                <li id="species">포메라니안</li>
+                <div class="clear"></div>
+            </ul>
+            <h3>오늘 할일</h3>
+            <ul id="todo">
+                <li>배변패드 갈아주기</li>
+                <li>밥주기</li>
+                <li>산책나가기</li>
+                <li>노즈워크놀이</li>
+                <li>훈련하기</li>
+              </ul>
+        </div>
+        </div>
+    </div>
+    <div class="footer">
+        <strong>바닥글</strong>
+        <ul>
+            <li>
+                <a href="#">이용약관</a>|
+                <a href="#">개인정보취급방지</a>|
+                <a href="#">사이트맵</a>|
+            </li>
+        </ul>
+        
+        <p>유주영 0802ryu@gmail.com</p><br>
+        <span>010-0000-0000</span>
+    </div>
+
 </body>
+
 </html>

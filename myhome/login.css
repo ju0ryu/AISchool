@@ -2,12 +2,20 @@ body {
     margin: 0; padding: 0; 
 }
 body{
-    background: linear-gradient(skyblue,rgb(221, 245, 255),white);
-    font-family: 굴림;
+    color: rgb(18, 18, 18);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    margin: 150px auto;
+    background-image: url('wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 700px;
+    backdrop-filter: blur(10px);
 }
 #box1 {
-    width: 250px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
     margin: 150px auto;
     display: block;
     text-align: center;
@@ -18,22 +26,23 @@ body{
 }
 
 img{
-    margin-top: 30px;
-    size: 30px;
-    fill: skyblue;
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
 }
 
 a{
+    display: block;
     text-decoration: none;
-    font-size: 12px;
-    color: black;
+    font-size: 15px;
+    margin-top: 5px;
 }
 
 label{
     display: block;
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 40px;
     font-weight: bold;
     /* font-family: Arial, Helvetica, sans-serif; */
     color: rgb(101, 101, 101);
@@ -44,7 +53,7 @@ label{
     background-color: rgb(138, 209, 237);
     border-color: transparent;
     color: white;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 #loginBtn:hover{
@@ -54,9 +63,10 @@ label{
 
 .account {
     display: block;
-    margin-bottom: 3px;
-    padding: 3px;
+    margin-bottom: 5px;
+    padding: 10px 30px;
     border: 1px solid lightgray;
     border-radius: 3px;
     margin: auto;
+    font-size: 20px;
 }

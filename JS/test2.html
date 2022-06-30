@@ -5,9 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="test2.js"></script>
+    <!-- <script src="test2.js"></script> -->
 </head>
 <body>
+    <script>
+        var num1 = parseInt(prompt('첫번째 숫자'));
+        var num2 = parseInt(prompt('두번째 숫자'));
+        var min, max;
+        var cnt=0;
+
+        if(num1>num2){
+            max = num1;
+            min = num2;
+        }else{
+            max = num2;
+            min = num1;
+        }
+
+        for(var i=min; i<=max; i++){
+            for(var j = 2; j<i; j++){
+                if(i%j == 0){
+                    break;
+                }
+            }if(i == j){
+            document.write(i);
+            cnt++;                    
+            }
+    }
     
+        document.write("총 소수의 갯수 = "+cnt);
+        
+
+    </script>
 </body>
 </html>
