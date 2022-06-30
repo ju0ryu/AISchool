@@ -131,6 +131,7 @@
             width: 80%;
             float: left;
             margin-left: 20px;
+            position: relative;
         }
     
         #content>#main_aside {
@@ -156,9 +157,10 @@
         }
         .month {
             padding: 30px 25px;
-            width: 1125px;
+            width: 90%;
             background: skyblue;
             text-align: center;
+            position: absolute;
             }
     
             .month ul {
