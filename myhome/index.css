@@ -12,7 +12,7 @@
             /* 절대 좌표 */
             height: 500px;
             position: relative;
-            background-image: url('dogSky.jpg');
+            background-image: url('dogWallpaper.jpg');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -21,39 +21,40 @@
 
         #dogLogo {
             position: absolute;
-            left: 510px;
+            left: 710px;
             top: 10px;
         }
     
         #main_header>#title h1 {
             position: absolute;
-            left: 480px;
+            left: 520px;
             top: 70px;
         }
     
         #main_header>#title h2 {
             position: absolute;
-            left: 460px;
+            left: 500px;
             top: 100px;
             font-family: 굴림;
+            color: #666;
         }
     
         #main_header>#main_gnb {
             position: absolute;
-            left: 30px;
-            top: 30px;
+            left: 50px;
+            top: 50px;
         }
     
         #main_header>#main_lnb {
             position: absolute;
-            right: 30px;
-            top: 30px;
+            right: 50px;
+            top: 50px;
         }
     
         /* -- 타이틀 -- */
         #title {
             font-family: 'Coiny', cursive;
-            color: #eee;
+            color: #666;
         }
     
         /* -- 메뉴(1) -- */
