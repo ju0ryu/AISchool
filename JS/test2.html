@@ -8,7 +8,7 @@
     <!-- <script src="test2.js"></script> -->
 </head>
 <body>
-    <script>
+    <!-- <script>
         var num1 = parseInt(prompt('첫번째 숫자'));
         var num2 = parseInt(prompt('두번째 숫자'));
         var min, max;
@@ -31,11 +31,31 @@
             document.write(i);
             cnt++;                    
             }
-    }
-    
+    }  
         document.write("총 소수의 갯수 = "+cnt);
-        
-
+    </script> -->
+    <script>
+        var num1 = parseInt(prompt('첫번째 숫자'));
+        var num2 = parseInt(prompt('두번째 숫자'));
+        var min, max;
+        var cnt=0;
+        var i = min;
+        while(i<=max){
+            var j = 2;
+            while(j<i){
+                if(i%j ==0){
+                    break;;
+                }
+                j++;
+            }
+            if(i==j){
+                cnt++;
+                console.log(i);
+            }
+            i++;
+        }
+        console.log("소수의 갯수 : "+cnt);
     </script>
+
 </body>
 </html>
