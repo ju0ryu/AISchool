@@ -9,6 +9,7 @@
 </head>
 <body>
     <!-- <script>
+        //for문
         var num1 = parseInt(prompt('첫번째 숫자'));
         var num2 = parseInt(prompt('두번째 숫자'));
         var min, max;
@@ -34,11 +35,21 @@
     }  
         document.write("총 소수의 갯수 = "+cnt);
     </script> -->
-    <script>
+    <!-- <script>
+        //while문
         var num1 = parseInt(prompt('첫번째 숫자'));
         var num2 = parseInt(prompt('두번째 숫자'));
         var min, max;
         var cnt=0;
+
+        if(num1>num2){
+            max = num1;
+            min = num2;
+        }else{
+            max = num2;
+            min = num1;
+        }
+
         var i = min;
         while(i<=max){
             var j = 2;
@@ -55,6 +66,39 @@
             i++;
         }
         console.log("소수의 갯수 : "+cnt);
+    </script> -->
+    <script>
+        // dowhile문
+        var num1 = parseInt(prompt('첫번째 숫자'));
+        var num2 = parseInt(prompt('두번째 숫자'));
+        var min, max;
+        var cnt=0;
+
+        if(num1>num2){
+            max = num1;
+            min = num2;
+        }else{
+            max = num2;
+            min = num1;
+        }
+
+        var i = min;
+        do{
+            var j = 2;
+            do{
+                if(i%j ==0){
+                    break;;
+                }
+                j++;
+            }while(j<i);
+            if(i==j){
+                cnt++;
+                console.log(i);
+            }
+            i++;
+        }while(i<=max);
+        console.log("소수의 갯수 : "+cnt);
+        
     </script>
 
 </body>
