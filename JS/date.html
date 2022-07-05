@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="array.js"></script> -->
+</head>
+<body>
+    <script>
+        console.log(new Date());
+        console.log(Date());
+        //console.log(new Date(year,month,day,hor,minute,second,millisecond));
+        //년 월은 필수 나머지 생략가능
+        console.log(Date.now()); //밀리세컨드로 현재시간
+        console.log(new Date(Date.now()));
+
+        (function printNow(){
+            const today = new Date();
+            const dayName = ['(일)','(월)','(화)','(수)','(목)','(금)','(토)'];
+            const day = dayName[today.getDay()];
+            const year = today.getFullYear();
+            const month = today.getMonth()+1;
+            const date = today.getDate();
+            let hour = today.getHours();
+            let minute = today.getMinutes();
+            let second = today.getSeconds();
+
+            const ampm = hour >= 12 ? 'pm' :'am';
+
+            hour %= 12;
+            hour = hour || 12; // hour가 0이면 12를 재할당
+            
+            minute = minute < 10 ?'0'+minute : minute;
+            second = second < 10 ?'0'+second : second;
+
+            const now = `${year}${month}${date}${day}${hour}${minute}${second}${ampm}`
+
+            console.log(now);
+
+            setTimeout(printNow,1000);
+        }());
+    </script>
+</body>
+</html>

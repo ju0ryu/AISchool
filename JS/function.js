@@ -61,3 +61,29 @@ var res = (function(a,b){
     var b = 5;
     return a*b;
 }(2,3));
+
+//콜백함수 - 파라미터로 함수를 받는것
+//반복되는 부분의 함수를 만들고 바뀌는 부분을 리터럴 함수로 만들어 호출
+function repeat(n,f){
+    for(var i=0;i<n;i++){
+        f(i);
+    }
+}
+
+var logAll = function(i){
+    console.log(i);
+};
+
+repeat(5, logAll);
+
+var logOdds = function(i){
+    if(i%2){
+        console.log(i);
+    }
+};
+
+repeat(5,logOdds);
+
+setTimeout(function(){
+    console.log('1초경과');
+},1000);
