@@ -93,74 +93,76 @@
 		var tel2 = document.input_form.tel2.value;
 		var tel3 = document.input_form.tel3.value;
 		var email1 = document.input_form.email1.value;
+		var email2 = document.input_form.email2.value;
 		var hobby = document.input_form.hobby.value;
 		var intro = document.input_form.intro.value;
 
 			//아이디 확인
 		if(id ==''){
-			alert('아이디입력');
+			alert('아이디를 입력하세요');
 			document.input_form.id.focus();
 			return false;
 		}else{
 			if(id.length<6||id.length>10){
-				alert('아이디 길이 확인')
+				alert('아이디 길이를 확인하세요')
 				document.input_form.id.focus();
 				return false;
 			}else{
 				for (var i = 0; i < id.length; i++) {
-					let ch = id.subString(i,i+1);
-					if(!((ch>='a'&& ch >='z') || (ch >='A' && ch <='Z') || (ch >='0'&& ch <='9'))) {
-						alert('아이디 형식확인');
+					var ids = id[i];
+					if(!((ids >='a'&& ids <='z') || (ids >='A' && ids <='Z') || (ids >='0'&& ids <='9'))) {
+						alert('아이디 형식이 맞지 않습니다');
 						document.input_form.id.focus();
 						return false;
 				}
 				}
 			}
 		}
+		console.log('checkId');
 		//비밀번호 확인
 		if (pw == '') {
-			alert('비밀번호입력');
+			alert('비밀번호를 입력하세요');
 			document.input_form.pw.focus();
 			return false;
 		} else {
 			if (pw.length < 6 || pw.length > 10) {
-				alert('비밀번호 길이 확인')
+				alert('비밀번호 길이를 확인하세요')
 				document.input_form.pw.focus();
 				return false;
 			} else {
 				for (var i = 0; i < pw.length; i++) {
-					let ch = id.subString(i, i + 1);
-					if (!((ch >= 'a' && ch >= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9'))) {
-						alert('비밀번호 형식확인');
-						document.input_form.id.focus();
+					var pws = pw[i];
+					if (!((pws >= 'a' && pws <= 'z') || (pws >= 'A' && pws <= 'Z') || (pws >= '0' && pws <= '9'))) {
+						alert('비밀번호 형식에 맞지 않습니다');
+						document.input_form.pw.focus();
 						return false;
 					}
 				}
 			}
 		}
+		console.log('checkPw1');
 		if(pw2==''){
-			alert('비밀번호입력');
+			alert('비밀번호를 입력해주세요');
 			document.input_form.pw2.focus();
 			return false;
-		}else{
-			if(!pw2 == pw){
-				alert('비밀번호 불일치')
+		}else if(!(pw2 == pw)){
+				alert('비밀번호가 일치하지 않습니다')
 				document.input_form.pw2.focus();
 				return false;
 			}
-		}
+		console.log('checkPw2');
 		//주민번호 확인
 		if(jumin1 =='' && jumin2 ==''){
-			lert('주민번호입력');
+			alert('주민번호입력하세요');
 			document.input_form.jumin1.focus();
 			return false;
 		}else{
 			var jumin = jumin1+jumin2;
 			for(var i=0;i<jumin.length;i++) {
-				let ch = jumin.subString(i,i+1);
-				if (!((ch >= 'a' && ch >= 'z') || (ch >= 'A' && ch <= 'Z'))) {
-					alert('숫자만 입력');
-					document.input_form.id.focus();
+				jumins = jumin[i];
+				if ((jumins >= 'a' && jumins <= 'z') || (jumins >= 'A' && jumins <= 'Z')) {
+					alert('숫자만 입력가능합니다');
+					document.input_form.jumin1.focus();
 					return false;
 				}
 			}
@@ -178,10 +180,50 @@
 			var checkDigit = (11 - (sum % 11)) % 10;
 			if (!(jumin[12] == checkDigit)) {
 				alert('주민번호가 옳바르지 않습니다');
-				document.input_form.id.focus();
+				document.input_form.jumin1.focus();
 				return false;
 			}
-			
+			console.log('checkJumin');
+			//성별확인
+			if(!(gender == '남자' || gender == '여자')){
+				alert('성별을 선택하세요');
+				document.input_form.jumin1.focus();
+				return false;
+			}
+			console.log('checkGender');
+			//전화번호확인
+			if (tel1 == '' && tel2 == '' && tel3 == '') {
+			alert('전화번호를 입력하세요');
+			document.input_form.tel1.focus();
+			return false;
+			} else {
+			var tel = tel1+tel2+tel3;
+			for (var i = 0; i < tel.length; i++) {
+				tels = tel[i];
+				if ((tels >= 'a' && tels <= 'z') || (tels >= 'A' && tels <= 'Z')) {
+					alert('숫자만 입력가능합니다');
+					document.input_form.tel1.focus();
+					return false;
+				}
+			}
+		}
+		console.log('checkTel');
+		//이메일확인
+		if(email1 ==''){
+			alert('이메일을 입력하세요');
+			document.input_form.email1.focus();
+			return false;
+		}
+		if(email2 ==''){
+			alert('이메일주소를 선택해주세요');
+			document.input_form.email2.focus();
+			return false;
+		}
+		console.log('checkEmail');
+		//취미확인
+
+
+
 
 }
 </script>
