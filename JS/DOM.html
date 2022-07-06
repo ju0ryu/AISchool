@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        window.onload = function() {
+            document.querySelector('h1').style.backgroundColor = 'red';
+            document.querySelector('h2').style.color = 'red';
+        };
+    </script> -->
+    <!-- <script>
+        window.onload = function() {
+        var header = document.getElementById('header');
+
+        header.style.color = 'orange';
+        header.style.background = 'red';
+        header.innerHTML = 'From JavaScript'; // textContent는 태그를 바꿀수없다
+        };
+    </script> -->
+    <!-- <script>
+        window.onload = function() {
+            var output = '';
+            for (var i = 0; i < 10; i++) {
+                output += `<h1> header - ${i} </h1>`;
+                document.body.textContent = output;
+        };
+
+    </script> -->
+    <!-- <script>
+        window.onload = function(){
+            var output = '';
+            for (var i = 0; i < 256; i+=8) { 
+                output += '<div></div>';
+        }
+        document.body.innerHTML = output;
+        
+        var divs = document.querySelectorAll('div');
+        for (var i = 0; i < divs.length; i++) {
+            var div = divs[i];
+            
+            div.style.height = '10px';
+            div.style.background = 'rgb('+i*8+','+i*8+','+i*8+')';
+        }
+    };
+    </script> -->
+    <!-- <script>
+        window.onload = function() {
+            var image = document.getElementById('image');
+            image.src = 'a.png';
+            image.width = 300;
+            image.height = 300;
+        };
+    </script> -->
+    <!-- <script>
+        //getAttribute, setAttribute 예제
+        window.onload = function() {
+            document.body.setAttribute('data-custom','value');
+
+            var dataCustom = document.body.getAttribute('data-custom');
+            alert(dataCustom);
+        };
+    </script> -->
+    <!-- <script>
+        // setInterval 현재시간 출력 start,stop함수
+        var resId ;
+        window.onload = function() {
+            var clock = document.getElementById('clock');
+            resId =setInterval(clockStart,1000);
+        };
+        function clockStart() {
+                var now = new Date();
+                var year = now.getFullYear();
+                var month = now.getMonth()+1;
+                var date = now.getDate();
+                var hour = now.getHours();
+                var min = now.getMinutes();
+                var sec = now.getSeconds();
+                var res = `${year}.${month}.${date} ${hour}:${min}:${sec}`;
+                clock.innerHTML = res;
+            }
+        function stop(){
+            clearInterval(resId);
+        }
+        var start = ()=>{   
+            resId = setInterval(clockStart, 1000);
+        };
+    </script> -->
+    <!-- <script>
+        //버튼 클릭 이벤트
+        window.onload = function() {
+            var btn = document.getElementById("btn");
+            
+            var click = () => {
+                    alert('click');
+                };
+            
+            btn.addEventListener("click",click);
+    };
+    </script> -->
+    <!-- <script>
+        //해당 이벤트 정보 알아보기
+        window.onload = function(event) {
+            console.log(event);
+        };
+    </script> -->
+    <script>
+        // 기본 이벤트 기능 삭제
+        window.onload = function() {
+            var button = document.getElementById("button");
+
+            button.onclick = function(event) {
+                //방법1
+                event.preventDefault();
+                //방법2
+                //return false; // 기본 이벤트 기능을 제거 ex) a태그 기능을 없앤다
+        };
+    };
+    </script>
+</head>
+<body>
+    <!-- <h1>Process-1</h1>
+    <h2>Process-1</h2>
+    <h1 id="header">header</h1> -->
+    <!--이미지 
+        <img id= 'imgae'/> --> 
+    <!-- 시간출력
+    <h1 id="clock"></h1>
+    <button onclick="stop();">stop</button>
+    <button onclick="start()">start</button> -->
+    기본이벤트 기능 삭제<br />
+    <a id = 'button' href="http://hanbit.co.kr">버튼</a>
+</body>
+</html>
