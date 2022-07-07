@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="jquery-3.6.0.min.js"></script> -->
+    <script>
+        $(document).ready(function() {
+            //스타일 속성을 변경 - .css()
+            /*
+            $('h1').css('color', 'red');
+            $('h1').css('background', 'black');
+            //스타일 조작
+            $('.box').css({
+                float: 'left',
+                margin: 10,
+                width: 100,
+                height: 100,
+                backgroundColor: 'red'
+            });
+            */
+            //속성 추출 - .attr()
+            /*
+            var src = $('script').attr('src');
+            alert(src);
+            // 속성 지정
+            $('img').attr('alt','jQuery 라이브러리 사용한 속성 지정');
+            $('img').attr('src', 'a.png');
+            $('img').attr('width', '100');
+            // 속성을 객체 형식으로 지정 가능
+            $('img').attr({
+                alt : 'jQuery 라이브러리 사용한 속성 지정',
+                src : 'a.png',
+                width : 100
+            });
+            */
+            //문서객체 스타일 조작
+            /*
+            var output = '';
+            for (var i = 0; i < 256; i++) {
+                output += '<div></div>';
+            }
+
+            document.body.innerHTML = output;
+
+            $('div').css({
+                height : 2,
+                backgroundColor: function(i){
+                    return `rgb(${i},${i},${i})`;
+                }
+            });
+            */       
+            //글자조작 - .text() , .html()
+            /*
+            $('h1:nth-child(1)').text('<a href="#">text()</a>');
+            $('h1:nth-child(2)').html('<a href="#">text()</a>');
+            //글자 읽어오기
+            var text = $('h1').text(); //선택자의 모든 텍스트를 불러온다
+            var html = $('h1').html(); //선택자의 첫번째 요소만 불러온다
+            
+            alert('text : ' + text);
+            alert('html : ' + html);
+            */
+            //클래스 조작
+            /*
+            $('#box').css({
+                width: 100,
+                height: 100,
+                background: 'orange'
+            }).on('click', function (){
+                $(this).css('background','red');
+            }).on('mouseover', function (){
+                $(this).css('background','blue');
+            }).on('mouseout',function (){
+                $(this).css('background', 'orange');
+            });
+            */
+           //click 이벤트 연결
+            /*
+            $('h1').click(function () {
+            alert('click');
+            });
+            $('h1').on('click',function () {
+                alert('click');
+            });
+            */
+            //복합 이벤트 연결 메서드
+            $('h1').hover(function () {
+                $(this).css({
+                    background: 'red',
+                    color: 'white'
+                });
+            }, function () {
+                $(this).css({
+                    background: '',
+                    color: ''
+                });
+            });
+
+            $('#box').css({
+                width: 100,
+                height: 100,
+                background: 'orange'
+            }).on({
+                click: function () {
+                    $(this).css('background','red');
+                },
+                mouseenter: function () {
+                    $(this).css('background','blue');
+                },
+                mouseleave: function () {
+                    $(this).css('background','orange');
+                }
+            })
+
+
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>header</h1>
+    <h1>header</h1>
+    <h1>header</h1>
+
+    <div class="box"></div>
+
+    <div id="box"></div>
+
+    <img>
+    <img>
+</body>
+</html>
