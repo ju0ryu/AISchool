@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+    <!-- <script>
+        //기본 이벤트 제거
+        $(document).ready(function() {
+        // $('a').click(function(){
+        //     alert('click');
+        //     event.preventDefault();     // event내장 객체를 사용하여 태그에 부여된 기본 이벤트를 삭제한다
+        // });
+        // $('button').click(function(){
+        //     $('.page').fadeToggle('slow');
+        // });
+        // });
+
+        // 애니메이션
+        /*
+        var clearQueue = false;
+        var goToEnd = false;
+
+        $('#clearQueue').change(function(){
+            clearQueue = $(this).prop('checked')
+        });
+        $('#goToEnd').change(function(){
+            goToEnd = $(this).prop('checked')
+        });
+        $('#stopButton').click(function (){
+            $('#box').stop(clearQueue,goToEnd);
+        });
+        $('#box').css({
+            width: 100,
+            height: 100,
+            background: 'red'
+        })
+        setInterval(function(){
+            $('box').animate({
+                width: 200
+            },1000).delay(1000).animate({
+                width: 100,
+                height: 100
+            },1000);
+        },3000);
+        */
+        });
+    </script> -->
+    <!-- <script>
+    window.onload = function() {
+        var input_1 = document.querySelector('input')[0];
+        var input_2 = document.querySelector('input')[1];
+
+        input_1.onkeydown = function(){
+            if(6 <= input_1.value.length){
+                input_2.focus();
+            }
+        };
+
+        input_2.onkeydown = function() {
+            var event = event || window.event;
+            if(event.keyCode == 8 && input2.value.length == 0){
+                input_1.focus();
+            }
+
+        };
+    };
+    </script> -->
+    <script>
+        // 이미지 연속반복 로직
+        window.onload = function() {
+            var cnt = 0;
+            var image = document.getElementById('image');
+            var frame = [
+                './image/0.png', './image/1.png', './image/2.png', './image/3.png',
+                './image/4.png', './image/5.png', './image/6.png', './image/7.png',
+                './image/8.png', './image/9.png', './image/10.png', './image/11.png',
+                './image/12.png', './image/13.png', './image/14.png'
+
+            ];
+            setInterval(function(){
+                image.src = frame[cnt % frame.length];
+                cnt = cnt +1;
+            },1000/20);
+        }
+        var res;
+        function start(){
+            res = setInterval(function () {
+                image.src = frame[cnt % frame.length];
+                cnt = cnt + 1;
+            }, 1000 / 20);
+        }
+        function stop(){
+            clearInterval(res);
+        }
+    </script>
+</head>
+<body>
+    <!-- // <a  href="https://github.com/">github</a>
+    // <button>Toggle Slow</button>
+    // <div class="page">
+    //     <h1>Toggle Slow</h1>
+    //     <p>Toggle slow</p>
+    // </div> -->
+    <!-- // <input id="clearQueue" type="checkbox">
+    // <br>
+    // <input id="goToEnd" type="checkbox">
+    // <br>
+    // <button id="stopButton">stop</button>
+    // <div id="box"></div> -->
+    <!-- <input type="text" maxlength="6">
+    <span>-</span>
+    <input type="text" maxlength="7"> -->
+    <input type="button" value="시작" onclick="start()">
+    <input type="button" value="정지" onclick="stop()">
+    <br><br>
+    <img id="image">
+
+</body>
+</html>

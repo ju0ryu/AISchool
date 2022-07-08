@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        div{border: 1px solid black;}
+        #outer{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            // $('body').on('click', '#outer', function () { alelrt('outer'); });       // 선택자가 body이기때문에 오류없이 실행되고 이벤트또한 실행된다.
+            // $('body').html('<div id="outer"></div>');
+            $('#outer').on('click', function () { alelrt('outer'); });                  // 오류는 없지만 클릭이벤트는 실행이 안된다.             
+            const outer = document.querySelector('#outer');                             // #outer가 생성 되어있지 않기 때문에 outer변수는 null을 가지게 된다.
+            outer.addEventListener('click', function () { alelrt('outer'); true});      // 따라서 이벤트 등록을 할수없어 오류가 난다
+        });
+        function tagInsert(){
+           // $('body').html('<div id="outer"></div>');                                 // 선택자가 body이기 때문에 버튼이 사라지고 div박스가 생긴다
+            $('body').append('<div id="outer"></div>');                                 // append는 요소뒤에 붙이기 때문에 버튼 아래 생성된다.
+        }
+    </script>
+</head>
+<body>
+    <button onclick="tagInsert();">버튼</button>
+</body>
+</html>
