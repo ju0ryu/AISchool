@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <Script>
+        //무한 스크롤
+        $(document).ready(function () {
+            // 문서객체 추가 함수
+            var appendDocument = function () {
+                for (var i = 0; i < 20; i++) {
+                    //문서객체를 생성
+                    $('<h1>Infinity Scroll</h1>').appendTo('body');
+                }
+            };
+            // 초기 문서 객체 추가
+            appendDocument();
+
+            $(window).scroll(function () {
+                var scrollHeight = $(window).scrollTop() + $(window).height();
+                var documentHeight = $(document).height();
+
+                if (scrollHeight >= documentHeight) {
+                    alert('scrollHeight= ' + scrollHeight);
+                    alert('documentHeight= ' + documentHeight);
+                    appendDocument();
+                }
+            });
+        });
+    </Script> -->
+    <style>
+        img{
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+    <script>
+        //갤러리 움직이기 
+        $(document).ready(function () {
+            var width = $('[data-role="slider"]').attr('data-width');
+            var height = $('[data-role="slider"]').attr('data-height');
+            var count = $('[data-role="slider"] div.item').length;
+
+            $('[data-role="slider"]').css({
+                position: 'relative',
+                overflow: 'hidden',
+                width: width,
+                height: height
+            }).find('.container').css({
+                position:'absolute',
+                width: count * width,
+                overflow: 'hidden'
+            }).find('.item').css({
+                width: width,
+                height: height,
+                float: 'left'
+            });
+            var currentPage = 0;
+            var changePage = function(){
+                $('[data-role="slider"] > .container').animate({
+                    left: -currentPage * width
+                },500);
+            };
+            $('#left-button').click(function(){
+                if(currentPage >0){
+                    currentPage = currentPage -1;
+                    changePage();
+                }
+            });
+            $('#right-button').click(function(){
+                if(currentPage <count-1){
+                    currentPage = currentPage +1;
+                    changePage();
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- 갤러리 움직이기 -->
+    <div data-role="slider" data-width="500" data-height="300">
+        <div class="container">
+            <div class="item">
+                <img src="1.png">
+            </div>
+            <div class="item">
+                <img src="2.png">
+            </div>
+            <div class="item">
+                <img src="3.png">
+            </div>
+        </div>
+    </div>
+    <button id="left-button">🔙</button>
+    <button id="right-button">🔜</button>
+
+</body>
+</html>
