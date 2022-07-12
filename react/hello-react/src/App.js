@@ -3,9 +3,10 @@ import './App.css';
 import { Fragment } from 'react';
 
 function App() {
+  const name = 'React'
   return (
     <>
-      <h1>리액트 안녕!</h1>
+      <h1>{ name } 안녕!</h1>
       <h2>잘 작동하고있니?</h2>
     </>
   );
