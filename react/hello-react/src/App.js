@@ -1,15 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-import { Fragment } from 'react';
+import logo from "./logo.svg";
+import "./App.css";
+import { Component, Fragment } from "react";
 
-function App() {
-  const name = 'React'
-  return (
-    <>
-      <h1>{ name } 안녕!</h1>
-      <h2>잘 작동하고있니?</h2>
-    </>
-  );
+// // 함수기반
+// function App() {
+//   const name = undefined;
+//   return (
+//     <>
+//       <div className="react">{name || "undefined"}</div>;
+//       <br />
+//       <input />
+//     </>
+//   );
+// }
+
+// class기반
+class App extends Component {
+  render() {
+    const name = "react";
+    return <div className="react">{name}</div>;
+  }
 }
-
 export default App;
