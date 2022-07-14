@@ -1,10 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { Component, Fragment } from "react";
-import Say from "./Say";
-import EventPractice from "./EventPractice";
+//import Say from "./Say";
+//import EventPractice from "./EventPractice";
 //import MyComponent from "./MyComponent";
 //import Counter from "./counter";
+import FormInput from "./FormInput";
 
 // // 함수기반
 // function App() {
@@ -45,18 +46,22 @@ import EventPractice from "./EventPractice";
 //   );
 // };
 
-// //104p
+// //Counter
 // const App = () => {
 //   return <Counter />;
 // };
 
-// //112p
+// //Say
 // const App = () => {
 //   return <Say />;
 // };
+// // EventPractice
+// const App = () => {
+//   return <EventPractice />;
+// };
 
 const App = () => {
-  return <EventPractice />;
+  return <FormInput />;
 };
 
 export default App;
