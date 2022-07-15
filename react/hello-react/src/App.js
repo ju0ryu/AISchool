@@ -6,6 +6,10 @@ import { Component, Fragment } from "react";
 //import MyComponent from "./MyComponent";
 //import Counter from "./counter";
 import FormInput from "./FormInput";
+// import ValidationSample from "./ValidationSample";
+// import RefSample from "./RefSample";
+import ScrollBox from "./ScrollBox";
+import IterationSample from "./IterationSample";
 
 // // 함수기반
 // function App() {
@@ -60,8 +64,37 @@ import FormInput from "./FormInput";
 //   return <EventPractice />;
 // };
 
-const App = () => {
-  return <FormInput />;
-};
+// const App = () => {
+//   return <ValidationSample />;
+// };
+
+// //RefSample
+// const App = () => {
+//   return <RefSample />;
+// };
+
+// //ScrollBox
+// class App extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <ScrollBox ref={(ref) => (this.scrollBox = ref)} />
+//         <button onClick={() => this.scrollBox.scrollToBottom()}>
+//           맨밑으로
+//         </button>
+//       </div>
+//     );
+//   }
+// }
+
+// const App = () => {
+//   return <FormInput />;
+// };
+
+class App extends Component {
+  render() {
+    return <IterationSample />;
+  }
+}
 
 export default App;
