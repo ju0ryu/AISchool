@@ -1,31 +1,37 @@
 import { useState, useReducer, useRef, Component } from "react";
 
-function reducer(form, action) {
-  return {
-    ...form,
-    [action.name]: action.value,
-  };
+const initForm = {
+  id: "",
+  pw: "",
+  jumin1: "",
+  jumin2: "",
+  tel1: "",
+  tel2: "",
+  tel3: "",
+  gender: "",
+  email1: "",
+  email2: "",
+};
+
+function reducer(state, action) {
+  if (action.name == "btn") {
+    return initForm;
+  } else {
+    return {
+      ...state,
+      [action.name]: action.value,
+    };
+  }
 }
 
 const FormInput = () => {
-  const [form, setForm] = useReducer(reducer, {
-    id: "",
-    pw: "",
-    jumin1: "",
-    jumin2: "",
-    tel1: "",
-    tel2: "",
-    tel3: "",
-    gender: "",
-    email1: "",
-    email2: "",
-  });
+  const [state, dispatch] = useReducer(reducer, initForm);
   const { id, pw, jumin1, jumin2, tel1, tel2, tel3, gender, email1, email2 } =
-    form;
+    state;
   const onChange = (e) => {
-    setForm(e.target);
+    dispatch(e.target);
   };
-  const onClick = () => {
+  const onClick = (e) => {
     alert(
       `아이디 : ${id}
       비밀번호 : ${pw}
@@ -35,6 +41,7 @@ const FormInput = () => {
       이메일 : ${email1}@${email2}
       `
     );
+    dispatch(e.target);
   };
   return (
     <div>
@@ -151,7 +158,7 @@ const FormInput = () => {
         </tr>
         <tr>
           <td colSpan="2" align="center" width="500">
-            <input type="button" value="제출" onClick={onClick} />
+            <input name="btn" type="button" value="제출" onClick={onClick} />
           </td>
         </tr>
       </table>
