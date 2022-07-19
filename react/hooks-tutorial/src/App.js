@@ -3,6 +3,7 @@ import Counter from "./Counter";
 import Info from "./Info";
 import { useState } from "react";
 import FormInput from "./FormInput";
+import Average from "./Average";
 
 // //Counter
 // const App = () => {
@@ -28,12 +29,16 @@ import FormInput from "./FormInput";
 // };
 
 // //Counter
+const App = () => {
+  return <Info />;
+};
+
 // const App = () => {
-//   return <Info />;
+//   return <FormInput />;
 // };
 
-const App = () => {
-  return <FormInput />;
-};
+// const App = () => {
+//   return <Average />;
+// };
 
 export default App;

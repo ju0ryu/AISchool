@@ -28,6 +28,7 @@ const FormInput = () => {
   const [state, dispatch] = useReducer(reducer, initForm);
   const { id, pw, jumin1, jumin2, tel1, tel2, tel3, gender, email1, email2 } =
     state;
+  const input = useRef([]);
   const onChange = (e) => {
     dispatch(e.target);
   };
@@ -43,6 +44,14 @@ const FormInput = () => {
     );
     dispatch(e.target);
   };
+
+  const onKeypress = (e) => {
+    if (e.key == "Enter") {
+      for (var i = 1; i < input.current.length; i++) {
+        input.current[i].focus();
+      }
+    }
+  };
   return (
     <div>
       <table align="center" border="1">
@@ -50,6 +59,8 @@ const FormInput = () => {
           <td width="110">아이디</td>
           <td width="400">
             <input
+              onKeyPress={onKeypress}
+              ref={(el) => (input.current[0] = el)}
               type="text"
               name="id"
               size="30"
@@ -63,6 +74,8 @@ const FormInput = () => {
           <td width="110">비밀번호</td>
           <td width="400">
             <input
+              onKeyPress={onKeypress}
+              ref={(el) => (input.current[1] = el)}
               type="password"
               name="pw"
               size="30"
@@ -76,6 +89,8 @@ const FormInput = () => {
           <td width="110">주민등록번호</td>
           <td width="400">
             <input
+              onKeyPress={onKeypress}
+              ref={(el) => (input.current[2] = el)}
               type="text"
               name="jumin1"
               size="6"
@@ -85,6 +100,8 @@ const FormInput = () => {
             />
             {" - "}
             <input
+              onKeyPress={onKeypress}
+              ref={(el) => (input.current[3] = el)}
               type="password"
               name="jumin2"
               size="7"
@@ -98,6 +115,8 @@ const FormInput = () => {
           <td>전화번호</td>
           <td>
             <input
+              onKeyPress={onKeypress}
+              ref={(el) => (input.current[4] = el)}
               type="tel"
               name="tel1"
               size="3"
@@ -107,6 +126,8 @@ const FormInput = () => {
             />
             {" - "}
             <input
+              onKeyPress={onKeypress}
+              ref={(el) => (input.current[5] = el)}
               type="tel"
               name="tel2"
               size="4"
@@ -116,6 +137,8 @@ const FormInput = () => {
             />
             {" - "}
             <input
+              onKeyPress={onKeypress}
+              ref={(el) => (input.current[6] = el)}
               type="tel"
               name="tel3"
               size="4"
@@ -158,16 +181,23 @@ const FormInput = () => {
         </tr>
         <tr>
           <td colSpan="2" align="center" width="500">
-            <input name="btn" type="button" value="제출" onClick={onClick} />
+            <input
+              onKeyPress={onKeypress}
+              name="btn"
+              type="button"
+              value="제출"
+              onClick={onClick}
+              ref={(el) => (input.current[7] = el)}
+            />
           </td>
         </tr>
       </table>
     </div>
   );
 };
+export default FormInput;
 
 // class FormInput extends Component {
-//   // input = React.createRef();
 //   state = {
 //     id: "",
 //     pw: "",
@@ -354,5 +384,3 @@ const FormInput = () => {
 //     );
 //   }
 // }
-
-export default FormInput;
