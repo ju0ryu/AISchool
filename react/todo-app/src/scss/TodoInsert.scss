@@ -1,0 +1,50 @@
+.TodoInsert {
+  // display: flex;
+  background: #97999b;
+  div {
+    background: #97999b;
+    outline: none;
+    border: none;
+    padding: 0.6rem;
+    font-size: 1.125rem;
+    flex: 1;
+    color: white;
+    &::placeholder {
+      color: #dee2e6;
+    }
+  }
+  input,
+  select {
+    background: none;
+    outline: none;
+    border: none;
+    padding: 0.6rem;
+    font-size: 1.125rem;
+    flex: 1;
+    color: white;
+    &::placeholder {
+      color: #dee2e6;
+    }
+  }
+  button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: #3ebc9e;
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.1s background ease-in;
+    &:hover {
+      background: #adb5bd;
+    }
+  }
+}
