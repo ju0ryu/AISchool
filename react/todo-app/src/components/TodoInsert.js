@@ -20,8 +20,9 @@ const TodoInsert = ({ onInsert }) => {
   });
   const onSubmit = useCallback(
     (e) => {
-      onInsert(form);
-      // console.log(form);
+      onInsert(id, pw, email, gender);
+      e.preventDefault();
+      console.log(form);
     },
     [onInsert, form],
   );

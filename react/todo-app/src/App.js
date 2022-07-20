@@ -4,16 +4,28 @@ import TodoList from './components/TodoList';
 import { useState, useRef, useCallback } from 'react';
 
 const App = () => {
-  const [todos, setTodos] = useState({
-    id: '',
-    pw: '',
-    email: '',
-    gender: '',
-  });
+  const [todos, setTodos] = useState([
+    {
+      num: 0,
+      id: 'example',
+      pw: '1234',
+      email: 'ex@example.com',
+      gender: '남자',
+    },
+  ]);
+  const nextId = useRef(1);
+  console.log(todos);
   const onInsert = useCallback(
-    (todos) => {
-      setTodos(todos);
-      console.log(todos);
+    (id, pw, email, gender) => {
+      const todo = {
+        num: nextId.current,
+        id: id,
+        pw: pw,
+        email: email,
+        gender: gender,
+      };
+      setTodos(todos.concat(todo));
+      nextId.current += 1; // nextId 1 씩 더하기
     },
     [todos],
   );
