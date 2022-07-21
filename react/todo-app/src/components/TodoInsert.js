@@ -1,8 +1,10 @@
 import { MdAdd } from 'react-icons/md';
 import '../scss/TodoInsert.scss';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 
-const TodoInsert = ({ onInsert }) => {
+const TodoInsert = ({ onInsert, update }) => {
+  const male = useRef();
+  const female = useRef();
   const [form, setForm] = useState({
     id: '',
     pw: '',
@@ -10,6 +12,24 @@ const TodoInsert = ({ onInsert }) => {
     gender: '',
   });
   const { id, pw, email, gender } = form;
+
+  // 수정하기
+  const onUpdate = useCallback(() => {
+    const updateForm = {
+      ...form,
+      id: update.id,
+      pw: update.pw,
+      email: update.email,
+      gender: update.gender,
+    };
+    if (male.current.value == update.gender) {
+      male.current.checked = true;
+    } else if (female.value == update.gender) {
+      female.current.checked = true;
+    }
+    setForm(updateForm);
+  });
+  useEffect(onUpdate, [update]);
 
   const onChange = useCallback((e) => {
     const copyForm = {
@@ -22,7 +42,12 @@ const TodoInsert = ({ onInsert }) => {
     (e) => {
       onInsert(id, pw, email, gender);
       e.preventDefault();
-      console.log(form);
+      setForm({
+        id: '',
+        pw: '',
+        email: '',
+        gender: e.target.reset(),
+      });
     },
     [onInsert, form],
   );
@@ -58,12 +83,19 @@ const TodoInsert = ({ onInsert }) => {
       </div>
       <div>
         <b>성별 : </b>
-        <input type="radio" name="gender" value="남자" onChange={onChange} />
+        <input
+          type="radio"
+          name="gender"
+          value="남자"
+          ref={male}
+          onChange={onChange}
+        />
         남자
         <input
           type="radio"
           name="gender"
           value="여자"
+          ref={female}
           onChange={onChange}
         />{' '}
         여자

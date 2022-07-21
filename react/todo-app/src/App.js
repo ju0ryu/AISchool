@@ -4,17 +4,14 @@ import TodoList from './components/TodoList';
 import { useState, useRef, useCallback } from 'react';
 
 const App = () => {
-  const [todos, setTodos] = useState([
-    {
-      num: 0,
-      id: 'example',
-      pw: '1234',
-      email: 'ex@example.com',
-      gender: '남자',
-    },
-  ]);
+  const [update, setUpdate] = useState({
+    id: '',
+    pw: '',
+    email: '',
+    gender: '',
+  });
+  const [todos, setTodos] = useState([]);
   const nextId = useRef(1);
-  console.log(todos);
   const onInsert = useCallback(
     (id, pw, email, gender) => {
       const todo = {
@@ -24,7 +21,8 @@ const App = () => {
         email: email,
         gender: gender,
       };
-      setTodos(todos.concat(todo));
+      const filter = todos.filter((todo) => todo.id !== id);
+      setTodos(filter.concat(todo));
       nextId.current += 1; // nextId 1 씩 더하기
     },
     [todos],
@@ -36,21 +34,23 @@ const App = () => {
     [todos],
   );
 
-  const onToggle = useCallback(
-    (id) => {
-      setTodos(
-        todos.map((todo) =>
-          todos.id === id ? { ...todo, checked: !todo.checked } : todo,
-        ),
-      );
-    },
-    [todos],
-  );
+  const onUpdate = useCallback((id) => {
+    const updateValue = todos.filter((todo) => todo.id === id)[0];
+
+    const copyUpdate = {
+      ...update,
+      id: updateValue.id,
+      pw: updateValue.pw,
+      email: updateValue.email,
+      gender: updateValue.gender,
+    };
+    setUpdate(copyUpdate);
+  });
 
   return (
     <TodoTemplate>
-      <TodoInsert onInsert={onInsert} />
-      <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
+      <TodoInsert onInsert={onInsert} update={update} />
+      <TodoList todos={todos} onRemove={onRemove} onUpdate={onUpdate} />
     </TodoTemplate>
   );
 };

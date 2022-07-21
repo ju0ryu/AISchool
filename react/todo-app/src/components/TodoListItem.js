@@ -1,8 +1,9 @@
 import '../scss/TodoListItem.scss';
 
-const TodoListItem = ({ todo, onRemove, onToggle }) => {
+const TodoListItem = ({ todo, onRemove, onUpdate }) => {
   const { id, pw, email, gender } = todo;
   console.log(todo);
+
   return (
     <div className="TodoListItem">
       <table>
@@ -20,9 +21,7 @@ const TodoListItem = ({ todo, onRemove, onToggle }) => {
           <td>{email}</td>
           <td>{gender}</td>
           <td>
-            <button onClick={() => onToggle(id, pw, email, gender)}>
-              수정
-            </button>
+            <button onClick={() => onUpdate(id)}>수정</button>
           </td>
           <td>
             <button onClick={() => onRemove(id)}>삭제</button>
