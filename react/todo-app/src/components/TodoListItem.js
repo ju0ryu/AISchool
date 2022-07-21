@@ -1,4 +1,5 @@
 import '../scss/TodoListItem.scss';
+import { MdCreate, MdRemoveCircleOutline } from 'react-icons/md';
 
 const TodoListItem = ({ todo, onRemove, onUpdate }) => {
   const { id, pw, email, gender } = todo;
@@ -21,10 +22,14 @@ const TodoListItem = ({ todo, onRemove, onUpdate }) => {
           <td>{email}</td>
           <td>{gender}</td>
           <td>
-            <button onClick={() => onUpdate(id)}>수정</button>
+            <button className="update" onClick={() => onUpdate(id)}>
+              <MdCreate />
+            </button>
           </td>
           <td>
-            <button onClick={() => onRemove(id)}>삭제</button>
+            <button className="remove" onClick={() => onRemove(id)}>
+              <MdRemoveCircleOutline />
+            </button>
           </td>
         </tr>
       </table>
