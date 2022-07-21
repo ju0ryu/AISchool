@@ -5,6 +5,9 @@ import { useState, useCallback, useEffect, useRef } from 'react';
 const TodoInsert = ({ onInsert, update }) => {
   const male = useRef();
   const female = useRef();
+
+  const [btnChange, setBtnChange] = useState(false);
+
   const [form, setForm] = useState({
     id: '',
     pw: '',
@@ -14,7 +17,7 @@ const TodoInsert = ({ onInsert, update }) => {
   const { id, pw, email, gender } = form;
 
   // 수정하기
-  const onUpdate = useCallback(() => {
+  const onUpdate = useCallback((e) => {
     const updateForm = {
       ...form,
       id: update.id,
@@ -28,6 +31,7 @@ const TodoInsert = ({ onInsert, update }) => {
       female.current.checked = true;
     }
     setForm(updateForm);
+    setBtnChange(!btnChange);
   });
   useEffect(onUpdate, [update]);
 
@@ -48,6 +52,7 @@ const TodoInsert = ({ onInsert, update }) => {
         email: '',
         gender: e.target.reset(),
       });
+      setBtnChange(true);
     },
     [onInsert, form],
   );
@@ -61,6 +66,8 @@ const TodoInsert = ({ onInsert, update }) => {
           name="id"
           value={id}
           onChange={onChange}
+          required
+          autoFocus
         />
       </div>
       <div>
@@ -70,6 +77,7 @@ const TodoInsert = ({ onInsert, update }) => {
           name="pw"
           value={pw}
           onChange={onChange}
+          required
         />
       </div>
       <div>
@@ -79,6 +87,7 @@ const TodoInsert = ({ onInsert, update }) => {
           name="email"
           value={email}
           onChange={onChange}
+          required
         />
       </div>
       <div>
@@ -87,20 +96,24 @@ const TodoInsert = ({ onInsert, update }) => {
           type="radio"
           name="gender"
           value="남자"
+          id="male"
           ref={male}
           onChange={onChange}
         />
-        남자
+        <label for="male">남자</label>
         <input
+          id="female"
           type="radio"
           name="gender"
           value="여자"
           ref={female}
           onChange={onChange}
-        />{' '}
-        여자
+        />
+        <label for="female">여자</label>
       </div>
-      <button type="submit">제출</button>
+      <button id="btn" type="submit">
+        {btnChange ? '제출' : '수정'}
+      </button>
     </form>
   );
 };
