@@ -5,7 +5,7 @@ import axios from "axios";
 
 const Layout = () => {
   const [data, setData] = useState(null);
-  const [page, setPage] = useState("blog");
+  const [page, setPage] = useState(null);
   const [search, setSearch] = useState();
   // const navigate = useNavigate();
 
@@ -15,7 +15,12 @@ const Layout = () => {
   const onClick = (page) => {
     console.log(search);
     console.log(page);
-    const url = `v1/search/${page}?query=${search}`;
+    const url = "";
+    if (page == null) {
+      url = "news";
+    } else {
+      url = `v1/search/${page}?query=${search}`;
+    }
     axios
       .get(url, {
         params: {
