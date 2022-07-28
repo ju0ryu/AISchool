@@ -1,11 +1,7 @@
-import { useState } from "react";
-import React from "react";
-import axios from "axios";
-import Cafe from "./Cafe";
-import Image from "./Image";
-import styled from "styled-components";
-import Blog from "./Blog";
-import News from "./News";
+import { useState } from 'react';
+import React from 'react';
+import styled from 'styled-components';
+import Layout from './Layout';
 
 const LayoutBlock = styled.div`
   padding: 1rem;
@@ -48,43 +44,22 @@ const LayoutBlock = styled.div`
 `;
 
 const App = () => {
-  const [data, setData] = useState(null);
-  const [page, setPage] = useState("");
-  const [search, setSearch] = useState(null);
+  const [page, setPage] = useState('');
+  const [search, setSearch] = useState('');
+  const [searchData, setSearchData] = useState('');
 
-  const NaverClienetId = "0_C0gO6RfZqeUrupKHsU";
-  const NaverClientSecret = "JocrPfZsxe";
-
-  const onClick = async (urls) => {
-    const url = urls + search;
-    try {
-      const response = await axios.get(url, {
-        params: {
-          start: 1, //검색 시작 위치
-          display: 5, // 가져올 이미지 갯수
-          sort: "sim", //정렬 유형 (유사도)
-        },
-        headers: {
-          "X-Naver-Client-Id": NaverClienetId,
-          "X-Naver-Client-Secret": NaverClientSecret,
-        },
-      });
-      setData(response.data.items);
-    } catch (e) {
-      console.log(e);
-    }
+  const onFocus = (e) => {
+    setSearch('');
   };
 
   const onChange = (e) => {
     setSearch(e.target.value);
-    console.log(search);
+    setSearchData(search);
   };
 
   const categories = (e) => {
     setPage(e.target.value);
-    const urls = `v1/search/${e.target.value}?query=`;
-    console.log("urls : " + urls);
-    onClick(urls);
+    setSearchData(search);
   };
   return (
     <div>
@@ -95,8 +70,8 @@ const App = () => {
             name="search"
             value={search}
             onChange={onChange}
+            onFocus={onFocus}
             required
-            autoFocus
           />
           {/* <button onClick={onClick}>🔎</button> */}
         </div>
@@ -116,19 +91,7 @@ const App = () => {
         </div>
         <hr />
       </LayoutBlock>
-      <div>
-        {console.log("data : " + data)}
-        {console.log("page : " + page)}
-        {page == "cafearticle"
-          ? data.map((items) => <Cafe key={items.link} items={items} />)
-          : page == "image"
-          ? data.map((items) => <Image key={items.link} items={items} />)
-          : page == "blog"
-          ? data.map((items) => <Blog key={items.link} items={items} />)
-          : page == "news"
-          ? data.map((items) => <News key={items.link} items={items} />)
-          : null}
-      </div>
+      <Layout search={searchData} page={page} />
     </div>
   );
 };
