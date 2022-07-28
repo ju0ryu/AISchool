@@ -6,7 +6,7 @@ import Blog from './Blog';
 import News from './News';
 import Movie from './Movie';
 
-const Layout = ({ search, page }) => {
+const Layout = ({ search, page, bools }) => {
   const [itemData, setItemData] = useState('');
   const NaverClienetId = '0_C0gO6RfZqeUrupKHsU';
   const NaverClientSecret = 'JocrPfZsxe';
@@ -20,7 +20,7 @@ const Layout = ({ search, page }) => {
           .get(url, {
             params: {
               start: 1, //검색 시작 위치
-              display: 10, // 가져올 이미지 갯수
+              display: 25, // 가져올 이미지 갯수
               sort: 'sim', //정렬 유형 (유사도)
             },
             headers: {
@@ -37,51 +37,17 @@ const Layout = ({ search, page }) => {
     };
     fetchData();
   }, [page]);
-
-  // if (category === 'cafearticle') {
-  //   return (
-  //     <div>
-  //       {itemData.map((item) => (
-  //         <Cafe key={item.link} items={item} />
-  //       ))}
-  //     </div>
-  //   );
-  // } else if (category === 'image') {
-  //   return (
-  //     <div>
-  //       {itemData.map((item) => (
-  //         <Image key={item.link} items={item} />
-  //       ))}
-  //     </div>
-  //   );
-  // } else if (category === 'blog') {
-  //   return (
-  //     <div>
-  //       {itemData.map((item) => (
-  //         <Blog key={item.link} items={item} />
-  //       ))}
-  //     </div>
-  //   );
-  // } else if (category === 'news') {
-  //   return (
-  //     <div>
-  //       {itemData.map((item) => (
-  //         <News key={item.link} items={item} />
-  //       ))}
-  //     </div>
-  //   );
-  // }
   return (
     <div>
-      {category === 'cafearticle'
+      {category === 'cafearticle' && bools
         ? itemData.map((items) => <Cafe key={items.link} items={items} />)
-        : category === 'image'
+        : category === 'image' && bools
         ? itemData.map((items) => <Image key={items.link} items={items} />)
-        : category === 'blog'
+        : category === 'blog' && bools
         ? itemData.map((items) => <Blog key={items.link} items={items} />)
-        : category === 'news'
+        : category === 'news' && bools
         ? itemData.map((items) => <News key={items.link} items={items} />)
-        : category === 'movie'
+        : category === 'movie' && bools
         ? itemData.map((items) => <Movie key={items.link} items={items} />)
         : null}
     </div>

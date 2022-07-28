@@ -30,7 +30,8 @@ const Image = ({ items }) => {
         <a href={link}>
           <img src={thumbnail} />
         </a>
-        <span>{titles && <div className="title">{titles}</div>}</span>
+        <p dangerouslySetInnerHTML={{ __html: title }} />
+        <p dangerouslySetInnerHTML={{ __html: link }} />
       </div>
     </ImageBlock>
   );

@@ -15,21 +15,18 @@ const BlogBlock = styled.div`
 const Blog = ({ items }) => {
   const { title, link, image, subtitle, pubDate, director, actor, userRating } =
     items;
-  const titles = title.replace(/<b>/g, '').replace(/<\/b>/g, '');
-  // const descriptions = description.replace(/<b>/g, "").replace(/<\/b>/g, "");
-  // const bloggernames = bloggername.replace(/<b>/g, '').replace(/<\/b>/g, '');
-  //   const cafeurls = cafeurl.replace(/<b>/g, "").replace(/<\/b>/g, "");
-
   return (
     <BlogBlock>
-      <h2>{titles && <div className="title">{titles}</div>}</h2>
+      <h2 dangerouslySetInnerHTML={{ __html: title }} />
       <h4>{subtitle}</h4>
       <h5>{pubDate}</h5>
       <div>
-        <img src={image} />
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <img src={image} />
+        </a>
       </div>
       <div>
-        <h4>{userRating}</h4>
+        <h4>평점 : {userRating}</h4>
       </div>
     </BlogBlock>
   );

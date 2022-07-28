@@ -44,9 +44,10 @@ const LayoutBlock = styled.div`
 `;
 
 const App = () => {
-  const [page, setPage] = useState('');
+  const [page, setPage] = useState('news');
   const [search, setSearch] = useState('');
-  const [searchData, setSearchData] = useState('');
+  const [searchData, setSearchData] = useState('인터스텔라');
+  const [bools, setBools] = useState(false);
 
   const onFocus = (e) => {
     setSearch('');
@@ -60,6 +61,7 @@ const App = () => {
   const categories = (e) => {
     setPage(e.target.value);
     setSearchData(search);
+    setBools(true);
   };
   return (
     <div>
@@ -94,7 +96,7 @@ const App = () => {
         </div>
         <hr />
       </LayoutBlock>
-      <Layout search={searchData} page={page} />
+      <Layout search={searchData} page={page} bools={bools} />
     </div>
   );
 };

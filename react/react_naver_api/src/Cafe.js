@@ -14,22 +14,20 @@ const CafeBlock = styled.div`
 
 const Cafe = ({ items }) => {
   const { title, link, description, cafename, cafeurl } = items;
-  const titles = title.replace(/<b>/g, '').replace(/<\/b>/g, '');
-  // const descriptions = description.replace(/<b>/g, "").replace(/<\/b>/g, "");
-  // const cafenames = cafename.replace(/<b>/g, '').replace(/<\/b>/g, '');
-  // const cafeurls = cafeurl.replace(/<b>/g, '').replace(/<\/b>/g, '');
-
   return (
     <CafeBlock>
-      <h2>{titles && <div className="title">{titles}</div>}</h2>
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <h2 dangerouslySetInnerHTML={{ __html: title }} />
+      </a>
       <div className="description">
-        <p>{description}</p>
+        <p dangerouslySetInnerHTML={{ __html: description }} />
       </div>
       <div>
-        {/* <h4>{cafenames !== null ? cafenames : thumbnail}</h4> */}
         <h4>{cafename}</h4>
         <span>
-          <a href={link} target="_blank" rel="noopener noreferrer" />
+          <a href={cafeurl} target="_blank" rel="noopener noreferrer">
+            {cafeurl}
+          </a>
         </span>
       </div>
     </CafeBlock>

@@ -15,19 +15,16 @@ const BlogBlock = styled.div`
 const Blog = ({ items }) => {
   const { title, link, description, bloggername, bloggerlink, postdate } =
     items;
-  const titles = title.replace(/<b>/g, '').replace(/<\/b>/g, '');
-  // const descriptions = description.replace(/<b>/g, "").replace(/<\/b>/g, "");
-  // const bloggernames = bloggername.replace(/<b>/g, '').replace(/<\/b>/g, '');
-  //   const cafeurls = cafeurl.replace(/<b>/g, "").replace(/<\/b>/g, "");
 
   return (
     <BlogBlock>
-      <h2>{titles && <div className="title">{titles}</div>}</h2>
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <h2 dangerouslySetInnerHTML={{ __html: title }} />
+      </a>
       <div className="description">
-        <p>{description}</p>
+        <p dangerouslySetInnerHTML={{ __html: description }} />
       </div>
       <div>
-        {/* <h4>{cafenames !== null ? cafenames : thumbnail}</h4> */}
         <h4>{bloggername}</h4>
       </div>
     </BlogBlock>

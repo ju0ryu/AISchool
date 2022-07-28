@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import moment from 'moment';
 
 const NewsBlock = styled.div`
   box-sizing: border-box;
@@ -14,16 +15,16 @@ const NewsBlock = styled.div`
 
 const News = ({ items }) => {
   const { title, link, description, originallink, pubDate } = items;
-  const titles = title.replace(/<b>/g, '').replace(/<\/b>/g, '');
-  // const descriptions = description.replace(/<b>/g, "").replace(/<\/b>/g, "");
-  //   const bloggernames = bloggername.replace(/<b>/g, "").replace(/<\/b>/g, "");
-  //   const cafeurls = cafeurl.replace(/<b>/g, "").replace(/<\/b>/g, "");
-
+  const publicDate = moment(pubDate).format('YYYY-MM-DD');
   return (
     <NewsBlock>
-      <h2>{titles && <div className="title">{titles}</div>}</h2>
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <h2 dangerouslySetInnerHTML={{ __html: title }} />
+      </a>
       <div className="description">
-        <p>{description}</p>
+        <p dangerouslySetInnerHTML={{ __html: description }} />
+        <p dangerouslySetInnerHTML={{ __html: link }} />
+        <p dangerouslySetInnerHTML={{ __html: publicDate }} />
       </div>
     </NewsBlock>
   );
