@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const NewsBlock = styled.div`
   box-sizing: border-box;
@@ -13,9 +13,9 @@ const NewsBlock = styled.div`
 `;
 
 const News = ({ items }) => {
-  const { title, link, description } = items;
-  const titles = title.replace(/<b>/g, "").replace(/<\/b>/g, "");
-  const descriptions = description.replace(/<b>/g, "").replace(/<\/b>/g, "");
+  const { title, link, description, originallink, pubDate } = items;
+  const titles = title.replace(/<b>/g, '').replace(/<\/b>/g, '');
+  // const descriptions = description.replace(/<b>/g, "").replace(/<\/b>/g, "");
   //   const bloggernames = bloggername.replace(/<b>/g, "").replace(/<\/b>/g, "");
   //   const cafeurls = cafeurl.replace(/<b>/g, "").replace(/<\/b>/g, "");
 
@@ -23,7 +23,7 @@ const News = ({ items }) => {
     <NewsBlock>
       <h2>{titles && <div className="title">{titles}</div>}</h2>
       <div className="description">
-        <p>{descriptions}</p>
+        <p>{description}</p>
       </div>
     </NewsBlock>
   );

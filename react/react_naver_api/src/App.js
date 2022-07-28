@@ -28,7 +28,7 @@ const LayoutBlock = styled.div`
     margin-left: auto;
     margin-right: auto;
     border: none;
-    width: 25%;
+    width: 20%;
     padding: 1rem;
     font-size: 1rem;
     font-weight: bold;
@@ -87,6 +87,9 @@ const App = () => {
           </button>
           <button value="image" onClick={categories}>
             이미지
+          </button>
+          <button value="movie" onClick={categories}>
+            영화
           </button>
         </div>
         <hr />

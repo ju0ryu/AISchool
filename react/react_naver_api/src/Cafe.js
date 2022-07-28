@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const CafeBlock = styled.div`
   box-sizing: border-box;
@@ -14,20 +14,23 @@ const CafeBlock = styled.div`
 
 const Cafe = ({ items }) => {
   const { title, link, description, cafename, cafeurl } = items;
-  const titles = title.replace(/<b>/g, "").replace(/<\/b>/g, "");
-  const descriptions = description.replace(/<b>/g, "").replace(/<\/b>/g, "");
-  const cafenames = cafename.replace(/<b>/g, "").replace(/<\/b>/g, "");
-  const cafeurls = cafeurl.replace(/<b>/g, "").replace(/<\/b>/g, "");
+  const titles = title.replace(/<b>/g, '').replace(/<\/b>/g, '');
+  // const descriptions = description.replace(/<b>/g, "").replace(/<\/b>/g, "");
+  // const cafenames = cafename.replace(/<b>/g, '').replace(/<\/b>/g, '');
+  // const cafeurls = cafeurl.replace(/<b>/g, '').replace(/<\/b>/g, '');
 
   return (
     <CafeBlock>
       <h2>{titles && <div className="title">{titles}</div>}</h2>
       <div className="description">
-        <p>{descriptions}</p>
+        <p>{description}</p>
       </div>
       <div>
         {/* <h4>{cafenames !== null ? cafenames : thumbnail}</h4> */}
-        <h4>{cafenames}</h4>
+        <h4>{cafename}</h4>
+        <span>
+          <a href={link} target="_blank" rel="noopener noreferrer" />
+        </span>
       </div>
     </CafeBlock>
   );

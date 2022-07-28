@@ -13,7 +13,7 @@ const BlogBlock = styled.div`
 `;
 
 const Blog = ({ items }) => {
-  const { title, link, description, bloggername, bloggerlink, postdate } =
+  const { title, link, image, subtitle, pubDate, director, actor, userRating } =
     items;
   const titles = title.replace(/<b>/g, '').replace(/<\/b>/g, '');
   // const descriptions = description.replace(/<b>/g, "").replace(/<\/b>/g, "");
@@ -23,12 +23,13 @@ const Blog = ({ items }) => {
   return (
     <BlogBlock>
       <h2>{titles && <div className="title">{titles}</div>}</h2>
-      <div className="description">
-        <p>{description}</p>
+      <h4>{subtitle}</h4>
+      <h5>{pubDate}</h5>
+      <div>
+        <img src={image} />
       </div>
       <div>
-        {/* <h4>{cafenames !== null ? cafenames : thumbnail}</h4> */}
-        <h4>{bloggername}</h4>
+        <h4>{userRating}</h4>
       </div>
     </BlogBlock>
   );
