@@ -6,32 +6,55 @@ const ImageBlock = styled.div`
   padding: 3rem;
   width: 80%;
   margin: 0 auto;
-  margin-top: 1rem;
-  h2 {
+  margin-top: 2rem;
+
+  max-width: 100%;
+  height: auto;
+  border: 3px solid #eaeaea;
+  padding: 0px;
+
+  a {
+    text-decoration-line: none;
     color: black;
+    text-align: center;
   }
-  .image {
-    display: inline-block;
+
+  h2 {
+    color: back;
+  }
+  span {
+  }
+  .thumbnail {
+    text-align: center;
+  }
+  .contents {
+    text-align: center;
   }
   img {
-    display: inline-block;
-    width: 200px;
-    height: 250px;
+    width: auto;
+    max-height: 400px;
   }
 `;
 
 const Image = ({ items }) => {
-  const { title, link, thumbnail, sizeheight, sizewidth } = items;
+  const { title, link, thumbnail } = items;
   const titles = title.replace(/<b>/g, '').replace(/<\/b>/g, '');
 
   return (
     <ImageBlock>
-      <div className="image">
-        <a href={link}>
-          <img src={thumbnail} />
-        </a>
-        <p dangerouslySetInnerHTML={{ __html: title }} />
-        <p dangerouslySetInnerHTML={{ __html: link }} />
+      {thumbnail && (
+        <div className="thumbnail">
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            <img src={link} alt="thumbnail" />
+          </a>
+        </div>
+      )}
+      <div className="contents">
+        <h2>
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            {title}
+          </a>
+        </h2>
       </div>
     </ImageBlock>
   );

@@ -10,9 +10,12 @@ const Layout = ({ search, page, bools }) => {
   const [itemData, setItemData] = useState('');
   const NaverClienetId = '0_C0gO6RfZqeUrupKHsU';
   const NaverClientSecret = 'JocrPfZsxe';
+  // page 값을 카테고리에 저장
   const category = page;
+  // 저장된 카테고리와 search 값을 url에 대입
   const url = `v1/search/${category}?query=${search}`;
 
+  // api 연결
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -29,6 +32,7 @@ const Layout = ({ search, page, bools }) => {
             },
           })
           .then((response) => {
+            //api 받아온 데이터를 items별로 itemsData에 저장
             setItemData(response.data.items);
           });
       } catch (e) {
@@ -38,6 +42,8 @@ const Layout = ({ search, page, bools }) => {
     fetchData();
   }, [page]);
   return (
+    // 카테고리값에 부합하는 이름과 bools 값이 true일때 itemData 값을 각각의 컴포넌트로
+    // 전달하기위해 3항 연산을 중첩하여 사용
     <div>
       {category === 'cafearticle' && bools
         ? itemData.map((items) => <Cafe key={items.link} items={items} />)

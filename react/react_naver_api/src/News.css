@@ -1,0 +1,39 @@
+* {
+    text-decoration: none;
+}
+
+.block {
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    background-color: rgba(247, 244, 244, 0.829);
+
+
+}
+
+.BBig {
+
+    float: right;
+    position: relative;
+    margin: auto;
+}
+
+.Big {
+
+    width: 500px;
+    height: 500px;
+    word-break: break-all;
+
+    /* display: flex; */
+    /* margin-left: auto;
+    margin-right: auto; */
+
+
+
+
+}
+
+
+.block :hover {
+    color: lightblue;
+    cursor: pointer;
+}
