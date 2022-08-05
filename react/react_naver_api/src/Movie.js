@@ -25,7 +25,7 @@ const BlogBlock = styled.div`
   }
   img {
     float: left;
-    whith: 300px;
+    width: 300px;
     height: 200px;
     padding: 30px;
   }
