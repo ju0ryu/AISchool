@@ -27,11 +27,26 @@ app.listen(PORT, () => {
   console.log(`running on port ${PORT}`);
 });
 
+// 게시판 전체 불러오기
 app.get('/list', (req, res) => {
   console.log('list');
   const sqlQuery =
     "SELECT BOARD_NUM, BOARD_WRITER, BOARD_TITLE, BOARD_CONTENT,DATE_FORMAT(BOARD_DATE, '%Y-%m-%d')AS BOARD_DATE FROM BOARD_TBL;";
   db.query(sqlQuery, (err, result) => {
+    res.send(result);
+  });
+});
+
+//글쓰기
+app.post('/insert', (req, res) => {
+  console.log('/insert', req.body);
+  var writer = req.body.writer;
+  var title = req.body.title;
+  var content = req.body.content;
+
+  const sqlQuery =
+    'INSERT INTO BOARD_TBL (BOARD_WRITER, BOARD_TITLE, BOARD_CONTENT) VALUES (?,?,?);';
+  db.query(sqlQuery, [writer, title, content], (err, result) => {
     res.send(result);
   });
 });
